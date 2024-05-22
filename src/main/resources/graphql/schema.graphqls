@@ -1,0 +1,17 @@
+type Query {
+    findAll: [Member]
+    findById(id: ID!): Member
+}
+#!는 필드가 필수라는 것
+type Mutation {
+    addMember(username: String!, email: String!, password: String!): Member
+    updateMember(id: ID!, username: String, email: String, password: String): Member
+    deleteMember(id: ID!): Boolean
+}
+
+type Member {
+    id: ID!
+    username: String
+    email: String
+    password: String
+}
